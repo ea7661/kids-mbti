@@ -229,11 +229,12 @@ const QUESTIONS = [
   }
 ];
 
-// 16가지 대한민국 대표 인기 여성 스타 MBTI 결과
+// 16가지 대한민국 대표 인기 여성 스타 MBTI 결과 및 실제 프로필 사진 URL
 const RESULTS = {
   "ENFP": {
     name: "츄 (Chuu)",
     emoji: "🍓",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/20251002_Chuu_%EC%B8%84_03.jpg/330px-20251002_Chuu_%EC%B8%84_03.jpg",
     badge: "인간 비타민 & 러블리 요정",
     color: "#ff7675",
     accentBg: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
@@ -252,6 +253,7 @@ const RESULTS = {
   "ENFJ": {
     name: "안유진 (IVE)",
     emoji: "🌟",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/IVE_Yujin_2026_GDA.jpg/330px-IVE_Yujin_2026_GDA.jpg",
     badge: "믿음직한 햇살 만능 캡틴",
     color: "#e17055",
     accentBg: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
@@ -270,6 +272,7 @@ const RESULTS = {
   "ENTP": {
     name: "이영지",
     emoji: "🎤",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Lee_Young-ji_in_February_2026.png/330px-Lee_Young-ji_in_February_2026.png",
     badge: "솔직 당당 텐션 폭발 아이콘",
     color: "#0984e3",
     accentBg: "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)",
@@ -288,6 +291,7 @@ const RESULTS = {
   "ENTJ": {
     name: "전소연 ((여자)아이들)",
     emoji: "👑",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/%284K%29_%28%EC%97%AC%EC%9E%90%29%EC%95%84%EC%9D%B4%EB%93%A4_%EC%86%8C%EC%97%B0%EC%9D%98_%EB%B0%98%EC%A7%9D%EC%9D%B4%EB%8A%94_%EC%88%9C%EA%B0%84...%EC%A3%BC%EC%96%BC%EB%A6%AC_%EC%97%AC%EC%8B%A0_%EA%B0%95%EB%A6%BC_I_SOYEON_PhotoCall_03_%28cropped%29.png/330px-%284K%29_%28%EC%97%AC%EC%9E%90%29%EC%95%84%EC%9D%B4%EB%93%A4_%EC%86%8C%EC%97%B0%EC%9D%98_%EB%B0%98%EC%A7%9D%EC%9D%B4%EB%8A%94_%EC%88%9C%EA%B0%84...%EC%A3%BC%EC%96%BC%EB%A6%AC_%EC%97%AC%EC%8B%A0_%EA%B0%95%EB%A6%BC_I_SOYEON_PhotoCall_03_%28cropped%29.png",
     badge: "카리스마 천재 프로듀서",
     color: "#d63031",
     accentBg: "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)",
@@ -306,6 +310,7 @@ const RESULTS = {
   "ESFP": {
     name: "장원영 (IVE)",
     emoji: "🎀",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Jang_Won-young_at_the_Bulgari_Eclettica_event_in_Seoul%2C_May_12%2C_2026_%281%29.png/330px-Jang_Won-young_at_the_Bulgari_Eclettica_event_in_Seoul%2C_May_12%2C_2026_%281%29.png",
     badge: "러블리 럭키비키! 모태 아이돌",
     color: "#fd79a8",
     accentBg: "linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)",
@@ -324,6 +329,7 @@ const RESULTS = {
   "ESFJ": {
     name: "혜리",
     emoji: "💛",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Hyeri_in_July_2025.png/330px-Hyeri_in_July_2025.png",
     badge: "모두에게 다정한 배려와 친절의 요정",
     color: "#f39c12",
     accentBg: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
@@ -342,6 +348,7 @@ const RESULTS = {
   "ESTP": {
     name: "전소미",
     emoji: "🛹",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/20240911_Jeon_Somi_%EC%A0%84%EC%86%8C%EB%AF%B8_02.jpg/330px-20240911_Jeon_Somi_%EC%A0%84%EC%86%8C%EB%AF%B8_02.jpg",
     badge: "행동파 쿨걸 올라운더",
     color: "#e67e22",
     accentBg: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
@@ -360,6 +367,7 @@ const RESULTS = {
   "ESTJ": {
     name: "보아 (BoA)",
     emoji: "📋",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/180417_%EB%B3%B4%EC%95%84_03_%28cropped%29_02.png/330px-180417_%EB%B3%B4%EC%95%84_03_%28cropped%29_02.png",
     badge: "정리정돈 1등 철저한 원칙주의자",
     color: "#c0392b",
     accentBg: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
@@ -378,6 +386,7 @@ const RESULTS = {
   "INFP": {
     name: "아이유 (IU)",
     emoji: "🧚‍♀️",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/IU_at_Blue_Dragon_Series_Awards_on_18072025_%2810%29.png/330px-IU_at_Blue_Dragon_Series_Awards_on_18072025_%2810%29.png",
     badge: "동화 같은 감성 싱어송라이터",
     color: "#6c5ce7",
     accentBg: "linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%)",
@@ -396,6 +405,7 @@ const RESULTS = {
   "INFJ": {
     name: "태연 (소녀시대)",
     emoji: "🌸",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/250307_Taeyeon_%40_-The_Tense-_in_Seoul_Day_1_%2854371295597%29_%28cropped%29.jpg/330px-250307_Taeyeon_%40_-The_Tense-_in_Seoul_Day_1_%2854371295597%29_%28cropped%29.jpg",
     badge: "속 깊은 지혜를 품은 보컬 퀸",
     color: "#2d3436",
     accentBg: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
@@ -414,6 +424,7 @@ const RESULTS = {
   "INTP": {
     name: "선미",
     emoji: "🔮",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/20230720_Lee_Sunmi_on_July_2023_01.jpg/330px-20230720_Lee_Sunmi_on_July_2023_01.jpg",
     badge: "독창적인 4차원 호기심 박사",
     color: "#00b894",
     accentBg: "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)",
@@ -432,6 +443,7 @@ const RESULTS = {
   "INTJ": {
     name: "김지원",
     emoji: "💎",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Kim_Ji-won_in_May_2026.png/330px-Kim_Ji-won_in_May_2026.png",
     badge: "스스로 척척 해내는 완벽 전략가",
     color: "#2c3e50",
     accentBg: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
@@ -450,6 +462,7 @@ const RESULTS = {
   "ISFP": {
     name: "슬기 (Red Velvet)",
     emoji: "🐻",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Kang_Seulgi_LONGCHAMP_2024.jpg/330px-Kang_Seulgi_LONGCHAMP_2024.jpg",
     badge: "순수하고 느긋한 감성 곰돌이",
     color: "#00cec9",
     accentBg: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
@@ -468,6 +481,7 @@ const RESULTS = {
   "ISFJ": {
     name: "윤아 (소녀시대)",
     emoji: "👼",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/260508_YOONA_%40_62nd_BAEKSANG_AWARDS_with_GUCCI.jpg/330px-260508_YOONA_%40_62nd_BAEKSANG_AWARDS_with_GUCCI.jpg",
     badge: "포근하게 챙겨주는 천사표 힐링 요정",
     color: "#fab1a0",
     accentBg: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
@@ -486,6 +500,7 @@ const RESULTS = {
   "ISTP": {
     name: "윈터 (aespa)",
     emoji: "❄️",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Winter_at_Incheon_Airport_on_July_10%2C_2026.png/330px-Winter_at_Incheon_Airport_on_July_10%2C_2026.png",
     badge: "쿨하고 시크한 만능 실력파 올라운더",
     color: "#636e72",
     accentBg: "linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%)",
@@ -504,6 +519,7 @@ const RESULTS = {
   "ISTJ": {
     name: "아이린 (Red Velvet)",
     emoji: "⭐",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/250320_%EB%A0%88%EB%93%9C%EB%B2%A8%EB%B2%B3_Irene_UGG_Photo_Call.jpg/330px-250320_%EB%A0%88%EB%93%9C%EB%B2%A8%EB%B2%B3_Irene_UGG_Photo_Call.jpg",
     badge: "약속 100% 신용왕 성실한 반장",
     color: "#2d3436",
     accentBg: "linear-gradient(135deg, #accbee 0%, #e7f0fd 100%)",

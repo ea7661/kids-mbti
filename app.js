@@ -23,6 +23,7 @@ const optEmoji1 = document.getElementById("opt-emoji-1");
 const optText1 = document.getElementById("opt-text-1");
 
 // 결과 화면 요소
+const resultPhoto = document.getElementById("result-photo");
 const resultEmoji = document.getElementById("result-emoji");
 const resultName = document.getElementById("result-name");
 const resultMbti = document.getElementById("result-mbti");
@@ -159,6 +160,11 @@ function calculateMBTI() {
 function showResult(mbtiCode) {
   const result = RESULTS[mbtiCode] || RESULTS["ENFP"];
 
+  if (resultPhoto && result.image) {
+    resultPhoto.src = result.image;
+    resultPhoto.alt = result.name;
+    resultPhoto.style.display = "block";
+  }
   resultEmoji.textContent = result.emoji;
   resultName.textContent = result.name;
   resultMbti.textContent = `${mbtiCode} · ${result.badge}`;
