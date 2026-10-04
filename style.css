@@ -67,6 +67,46 @@ body {
   100% { transform: scale(1); opacity: 1; }
 }
 
+/* 상단 게임 전환 탭 (MBTI & 우정점수 측정) */
+.game-nav-tabs {
+  display: flex;
+  background: #f1f2f6;
+  border-radius: 18px;
+  padding: 5px;
+  margin: 18px 20px 8px;
+  gap: 6px;
+  border: 2px solid #eef1f6;
+  z-index: 10;
+}
+
+.nav-tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 12px 10px;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.05rem;
+  color: #747d8c;
+  text-decoration: none;
+  border-radius: 14px;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.nav-tab-item.active {
+  background: #ffffff;
+  color: #ff4757;
+  box-shadow: 0 4px 14px rgba(255, 71, 87, 0.2);
+  transform: scale(1.02);
+}
+
+.nav-tab-item:hover:not(.active) {
+  background: #e4e7eb;
+  color: #2f3542;
+}
+
 /* 공통 화면 스타일 */
 .screen {
   display: none;
@@ -804,20 +844,24 @@ body {
 /* 토스트 알림 메시지 */
 .toast-msg {
   position: fixed;
-  bottom: 24px;
+  bottom: 28px;
   left: 50%;
   transform: translateX(-50%) translateY(50px);
-  background: rgba(47, 53, 66, 0.92);
+  background: rgba(33, 37, 41, 0.96);
   color: #ffffff;
-  padding: 10px 22px;
-  border-radius: 24px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 700;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s ease;
-  z-index: 1000;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 99999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  max-width: 90%;
+  word-break: keep-all;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
 }
 
 .toast-msg.show {

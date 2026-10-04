@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>추억의 이름 궁합 & 우정지수 측정기 💖</title>
+  <meta name="description" content="공책에 적어보던 추억의 이름점! 두 사람의 이름을 입력하면 획수를 더해 우정 지수를 측정해 드립니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="추억의 이름 궁합 & 우정지수 측정기 💖">
+  <meta property="og:description" content="너와 나의 이름 획수로 알아보는 찰떡 우정 지수는 몇 점? 지금 바로 측정해 보세요!">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800">
+
+  <link rel="stylesheet" href="friendship.css">
+</head>
+<body>
+
+  <!-- 축하 폭죽 캔버스 -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- 토스트 알림 메시지 -->
+  <div id="toast-msg" class="toast-msg">클립보드에 링크가 복사되었어요! 🎉</div>
+
+  <div class="app-container">
+    
+    <!-- 상단 게임 전환 탭 (MBTI & 우정점수 측정) -->
+    <nav class="game-nav-tabs">
+      <a href="index.html" class="nav-tab-item">🎒 MBTI</a>
+      <a href="friendship.html" class="nav-tab-item active">💖 우정점수 측정</a>
+    </nav>
+
+    <!-- 헤더 -->
+    <div class="header-box">
+      <div class="badge-tag">💌 추억의 공책 이름점</div>
+      <h1 class="page-title">너와 나의<br><span>이름 우정지수</span> 측정기</h1>
+      <p class="page-desc">
+        두 사람의 이름을 적어보세요!<br>
+        한 글자씩 엮고 획수를 더해 우리의 찰떡궁합을 알려드려요! 💖
+      </p>
+    </div>
+
+    <!-- 입력 섹션 -->
+    <div class="input-section">
+      <div class="input-row">
+        <div class="input-group">
+          <label class="input-label" for="input-name1">🧒 첫 번째 친구</label>
+          <input type="text" id="input-name1" class="name-input" placeholder="이름을 입력해주세요" maxlength="5">
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="input-name2">👧 두 번째 친구</label>
+          <input type="text" id="input-name2" class="name-input" placeholder="이름을 입력해주세요" maxlength="5">
+        </div>
+      </div>
+
+      <button id="btn-calculate" class="btn-calc">
+        <span>💘</span> 우정 지수 측정하기!
+      </button>
+    </div>
+
+    <!-- 역피라미드 사다리꼴 시각화 카드 -->
+    <div id="pyramid-card" class="pyramid-card">
+      <div class="pyramid-subtitle">✨ 한 획 한 획 정성으로 모아보는 우정 사다리</div>
+      
+      <!-- 인터랙티브 피라미드 보드 -->
+      <div id="pyramid-board" class="pyramid-board">
+        <!-- JS로 동적 노드 생성 -->
+      </div>
+
+      <!-- 최종 우정 점수 결과 -->
+      <div id="result-box" class="result-box">
+        <div class="score-display">
+          <span class="score-heart">💖</span>
+          <span id="score-num" class="score-num">85</span>
+          <span class="score-unit">%</span>
+        </div>
+        <div id="result-badge" class="result-badge">환상의 찰떡궁합 100%</div>
+        <h2 id="result-title" class="result-title">우주 최강의 영혼의 단짝! 👭✨</h2>
+        <p id="result-desc" class="result-desc">
+          전생에 나라를 같이 구했나요? 눈빛만 봐도 마음이 통하고 평생을 함께할 기적의 단짝 친구예요!
+        </p>
+
+        <div class="action-buttons">
+          <button id="btn-share" class="btn-share">
+            <span>💬</span> 친구에게 우리 우정 점수 자랑하기
+          </button>
+          <button id="btn-copy" class="btn-retry">
+            <span>🔗</span> 링크 복사하기
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 쿠팡 파트너스 공식 배너 (말랑이) -->
+    <div class="coupang-box">
+      <div class="coupang-badge">🎁 우정 테스트 완료 꿀템</div>
+      <h3 class="coupang-title">친구랑 같이 맞출 대세 힐링템! 말랑이 🧸</h3>
+      <div class="coupang-iframe-wrapper">
+        <iframe src="https://coupa.ng/cpVoCy" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+      </div>
+      <div class="coupang-disclaimer">
+        ※ 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+      </div>
+    </div>
+
+  </div>
+
+  <script src="friendship-data.js"></script>
+  <script src="friendship.js"></script>
+</body>
+</html>

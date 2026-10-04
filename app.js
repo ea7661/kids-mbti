@@ -207,51 +207,79 @@ function showToast(msg) {
   toastMsg.classList.add("show");
   setTimeout(() => {
     toastMsg.classList.remove("show");
-  }, 2400);
+  }, 2800);
 }
 
-// 링크 복사하기
-function copyCurrentUrl() {
-  const url = window.location.href;
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(url).then(() => {
-      showToast("링크가 복사되었어요! 친구에게 공유해 보세요 🎉");
+// 텍스트 클립보드 복사 함수
+function copyTextToClipboard(text, successMsg) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast(successMsg);
     }).catch(() => {
-      fallbackCopy(url);
+      fallbackExecCopy(text, successMsg);
     });
   } else {
-    fallbackCopy(url);
+    fallbackExecCopy(text, successMsg);
   }
 }
 
-function fallbackCopy(text) {
+function fallbackExecCopy(text, successMsg) {
   const textArea = document.createElement("textarea");
   textArea.value = text;
+  textArea.style.position = "fixed";
+  textArea.style.left = "-9999px";
+  textArea.style.top = "0";
   document.body.appendChild(textArea);
+  textArea.focus();
   textArea.select();
+
   try {
-    document.execCommand("copy");
-    showToast("링크가 복사되었어요! 친구에게 공유해 보세요 🎉");
+    const successful = document.execCommand("copy");
+    if (successful) {
+      showToast(successMsg);
+    } else {
+      prompt("아래 텍스트를 복사(Ctrl+C)하세요:", text);
+    }
   } catch (err) {
-    showToast("주소창의 링크를 직접 복사해 주세요!");
+    prompt("아래 텍스트를 복사(Ctrl+C)하세요:", text);
   }
   document.body.removeChild(textArea);
 }
 
-// 공유하기 기능 (Web Share API 또는 링크 복사)
-function handleShare() {
-  const title = "동물 친구로 알아보는 나의 성격 탐험대! 🦁🐿️";
-  const text = `나는 어떤 동물일까? 내 성격 수호신을 찾아보자!`;
-  const url = window.location.href;
+// 링크 복사하기
+function copyCurrentUrl() {
+  const shareUrl = window.location.protocol.startsWith("http")
+    ? window.location.href
+    : "https://eunae7661.github.io/kids-mbti/";
 
-  if (navigator.share) {
+  copyTextToClipboard(shareUrl, "🔗 성격 탐험대 링크가 복사되었어요! 친구에게 공유해 보세요! 🎉");
+}
+
+// 공유하기 기능 (Web Share API 또는 리치 텍스트 클립보드 복사)
+function handleShare() {
+  const name = resultName.textContent || "동물 친구";
+  const mbti = resultMbti.textContent || "";
+  const tagline = resultTagline.textContent || "";
+
+  const shareUrl = window.location.protocol.startsWith("http")
+    ? window.location.href
+    : "https://eunae7661.github.io/kids-mbti/";
+
+  const fullShareText = `[🐾 초등 성격 탐험대 나의 MBTI 결과]\n` +
+                        `나의 수호신 동물은? 👉 ${name} (${mbti})!\n` +
+                        `${tagline}\n\n` +
+                        `너는 어떤 동물 친구야? 지금 찾아봐! 👇\n${shareUrl}`;
+
+  if (navigator.share && window.location.protocol.startsWith("http")) {
     navigator.share({
-      title: title,
-      text: text,
-      url: url,
-    }).catch(() => {});
+      title: "동물 친구로 알아보는 나의 성격 탐험대! 🦁🐿️",
+      text: fullShareText,
+      url: shareUrl
+    }).catch(() => {
+      copyTextToClipboard(fullShareText, "📋 결과와 초대 링크가 복사되었어요! 카톡에 붙여넣기(Ctrl+V) 해보세요! 🎉");
+    });
   } else {
-    copyCurrentUrl();
+    copyTextToClipboard(fullShareText, "📋 결과와 초대 링크가 복사되었어요! 카톡에 붙여넣기(Ctrl+V) 해보세요! 🎉");
   }
 }
 

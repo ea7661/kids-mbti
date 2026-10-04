@@ -1,0 +1,509 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;600;800&display=swap');
+
+:root {
+  --primary-pink: #ff6b81;
+  --primary-purple: #a29bfe;
+  --bg-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
+  --card-bg: #ffffff;
+  --text-main: #2f3542;
+  --border-radius-lg: 28px;
+  --border-radius-md: 18px;
+  --shadow-main: 0 18px 45px rgba(255, 107, 129, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  color: var(--text-main);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 폭죽 캔버스 */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* 앱 메인 컨테이너 */
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #fff;
+  padding: 24px 20px;
+}
+
+/* 상단 게임 전환 탭 (MBTI & 우정점수 측정) */
+.game-nav-tabs {
+  display: flex;
+  background: #f1f2f6;
+  border-radius: 18px;
+  padding: 5px;
+  margin-bottom: 22px;
+  gap: 6px;
+  border: 2px solid #eef1f6;
+}
+
+.nav-tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 12px 10px;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.05rem;
+  color: #747d8c;
+  text-decoration: none;
+  border-radius: 14px;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.nav-tab-item.active {
+  background: #ffffff;
+  color: #ff4757;
+  box-shadow: 0 4px 14px rgba(255, 71, 87, 0.2);
+  transform: scale(1.02);
+}
+
+.nav-tab-item:hover:not(.active) {
+  background: #e4e7eb;
+  color: #2f3542;
+}
+
+/* 헤더 영역 */
+.header-box {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.badge-tag {
+  display: inline-block;
+  background: #fff0f3;
+  color: #ff4757;
+  font-family: 'Jua', sans-serif;
+  font-size: 0.88rem;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.page-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 2.1rem;
+  color: #2f3542;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.page-title span {
+  color: #ff4757;
+}
+
+.page-desc {
+  font-size: 0.92rem;
+  color: #747d8c;
+  line-height: 1.5;
+}
+
+/* 이름 입력 폼 */
+.input-section {
+  background: #fffafb;
+  border: 2px dashed #ffccd5;
+  border-radius: var(--border-radius-md);
+  padding: 18px 16px;
+  margin-bottom: 24px;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-label {
+  font-family: 'Jua', sans-serif;
+  font-size: 0.95rem;
+  color: #57606f;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.name-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #edf2f7;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-family: 'Jua', sans-serif;
+  color: #2f3542;
+  text-align: center;
+  outline: none;
+  transition: all 0.2s;
+  background: #ffffff;
+}
+
+.name-input:focus {
+  border-color: #ff6b81;
+  box-shadow: 0 0 0 3px rgba(255, 107, 129, 0.2);
+}
+
+.btn-calc {
+  width: 100%;
+  background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+  color: #ffffff;
+  border: none;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.35rem;
+  padding: 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 71, 87, 0.35);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-calc:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 71, 87, 0.45);
+}
+
+.btn-calc:active {
+  transform: translateY(1px);
+}
+
+/* 역피라미드 그래픽 시각화 영역 */
+.pyramid-card {
+  display: none;
+  background: #ffffff;
+  border: 2px solid #f1f2f6;
+  border-radius: var(--border-radius-md);
+  padding: 24px 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  animation: slideDown 0.4s ease;
+}
+
+.pyramid-card.active {
+  display: block;
+}
+
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.pyramid-subtitle {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.1rem;
+  color: #747d8c;
+  margin-bottom: 18px;
+}
+
+/* 피라미드 보드 */
+.pyramid-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding: 4px;
+}
+
+.pyramid-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  animation: rowAppear 0.4s ease forwards;
+}
+
+@keyframes rowAppear {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 글자 노드 */
+.char-node {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #2f3542;
+  color: #ffffff;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 숫자 노드 */
+.num-node {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #ffccd5;
+  color: #ff4757;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s;
+}
+
+.num-node.highlight {
+  background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+  color: #ffffff;
+  border-color: #ff4757;
+  transform: scale(1.15);
+  box-shadow: 0 4px 14px rgba(255, 71, 87, 0.4);
+}
+
+/* 최종 결과 영역 */
+.result-box {
+  background: linear-gradient(135deg, #fff5f7 0%, #f6f3ff 100%);
+  border-radius: var(--border-radius-md);
+  padding: 22px 16px;
+  margin-top: 10px;
+  border: 2px solid #ffe3e8;
+}
+
+.score-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.score-heart {
+  font-size: 2.8rem;
+  animation: heartPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+.score-num {
+  font-family: 'Jua', sans-serif;
+  font-size: 3.4rem;
+  color: #ff4757;
+  line-height: 1;
+}
+
+.score-unit {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.8rem;
+  color: #ff6b81;
+}
+
+.result-badge {
+  display: inline-block;
+  background: #ffffff;
+  color: #6c5ce7;
+  font-family: 'Jua', sans-serif;
+  font-size: 0.95rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(108, 92, 231, 0.15);
+}
+
+.result-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.45rem;
+  color: #2f3542;
+  margin-bottom: 6px;
+}
+
+.result-desc {
+  font-size: 0.92rem;
+  color: #57606f;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+
+/* 버튼 액션들 */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn-share {
+  background: #fee500;
+  color: #191919;
+  border: none;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.15rem;
+  padding: 13px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(254, 229, 0, 0.4);
+  transition: all 0.2s;
+}
+
+.btn-share:hover {
+  transform: translateY(-2px);
+}
+
+.btn-retry {
+  background: #f1f2f6;
+  color: #57606f;
+  border: none;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.05rem;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn-retry:hover {
+  background: #e4e7eb;
+}
+
+/* 쿠팡 파트너스 공식 배너 상자 */
+.coupang-box {
+  margin-top: 24px;
+  background: linear-gradient(135deg, #fff5f7 0%, #fff8eb 100%);
+  border: 2px solid #ffccd5;
+  border-radius: var(--border-radius-md);
+  padding: 18px 14px 14px;
+  text-align: center;
+}
+
+.coupang-badge {
+  display: inline-block;
+  background: #ff4757;
+  color: #ffffff;
+  font-family: 'Jua', sans-serif;
+  font-size: 0.82rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.coupang-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.1rem;
+  color: #2f3542;
+  margin-bottom: 12px;
+}
+
+.coupang-iframe-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.coupang-iframe-wrapper iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.coupang-disclaimer {
+  font-size: 0.72rem;
+  color: #95a5a6;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* 토스트 메시지 */
+.toast-msg {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background: rgba(33, 37, 41, 0.96);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 99999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  max-width: 90%;
+  word-break: keep-all;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.toast-msg.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* 모바일 화면 대응 */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+  .app-container {
+    border-radius: 0;
+    border: none;
+    min-height: 100vh;
+  }
+  .char-node {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+  .num-node {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+}
