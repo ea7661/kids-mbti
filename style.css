@@ -184,6 +184,89 @@ body {
   transform: translateY(1px);
 }
 
+/* 시작 화면 하단 쿠팡 광고 배너 */
+.intro-ad-box {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #fff5f7 0%, #fffbf0 100%);
+  border: 2px dashed #ffccd5;
+  border-radius: var(--border-radius-md);
+  padding: 14px 14px 10px;
+  text-align: left;
+}
+
+.intro-ad-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.intro-ad-tag {
+  background: #ff4757;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.intro-ad-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 0.95rem;
+  color: #2f3542;
+}
+
+.btn-intro-ad {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1.5px solid #ffe3e8;
+  border-radius: var(--border-radius-sm);
+  padding: 10px 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.btn-intro-ad:hover {
+  transform: translateY(-2px);
+  border-color: #ff6b81;
+  box-shadow: 0 6px 14px rgba(255, 107, 129, 0.2);
+}
+
+.ad-emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.ad-text-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ad-text-group strong {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.05rem;
+  color: #ff4757;
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+
+.ad-text-group small {
+  font-size: 0.78rem;
+  color: #57606f;
+  line-height: 1.35;
+}
+
+.ad-arrow {
+  font-size: 1.1rem;
+  color: #ff4757;
+  font-weight: bold;
+}
+
 /* 2. 퀴즈 화면 */
 #screen-quiz {
   justify-content: flex-start;
@@ -602,8 +685,18 @@ body {
   background: linear-gradient(135deg, #ee3344 0%, #ff5264 100%);
 }
 
-.btn-coupang:active {
-  transform: scale(0.98);
+.coupang-iframe-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px auto;
+  padding: 4px;
+}
+
+.coupang-iframe-wrapper iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+  background: #ffffff;
 }
 
 .coupang-disclaimer {
