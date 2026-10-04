@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>동물 친구로 알아보는 나의 성격 탐험대! | 초등 저학년 MBTI 테스트</title>
-  <meta name="description" content="초등학교 1~3학년 맞춤! 지루하지 않은 20가지 질문으로 알아보는 나의 동물 MBTI 성격 테스트">
+  <title>나와 성격이 꼭 닮은 여자 연예인은 누구? | 초등 스타 MBTI 테스트 💖</title>
+  <meta name="description" content="초등학생 맞춤! 20가지 질문으로 알아보는 나와 성격이 꼭 닮은 인기 여자 연예인 MBTI 테스트">
   
   <!-- Open Graph (SNS/카카오톡 공유 최적화) -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="동물 친구로 알아보는 나의 성격 탐험대! 🦁🐿️">
-  <meta property="og:description" content="나는 어떤 동물 친구일까? 3분 만에 알아보는 신나는 초등학생 성격 테스트!">
+  <meta property="og:title" content="나와 성격이 꼭 닮은 여자 연예인은 누구? 🎀✨">
+  <meta property="og:description" content="장원영, 아이유, 윈터 중 나와 가장 닮은 스타는? 3분 만에 알아보는 신나는 스타 성격 테스트!">
   <meta property="og:image" content="https://images.unsplash.com/photo-1534567153574-2b12153a87f0?w=800">
 
   <link rel="stylesheet" href="style.css">
@@ -26,25 +26,25 @@
     
     <!-- 상단 게임 전환 탭 (MBTI & 우정점수 측정) -->
     <nav class="game-nav-tabs">
-      <a href="index.html" class="nav-tab-item active">🎒 MBTI</a>
+      <a href="index.html" class="nav-tab-item active">🎒 연예인 MBTI</a>
       <a href="friendship.html" class="nav-tab-item">💖 우정점수 측정</a>
     </nav>
 
     <!-- 1. 시작 화면 -->
     <div id="screen-intro" class="screen active">
       <div>
-        <div class="intro-badge">🎒 초등 저학년 맞춤 성격 탐험대</div>
-        <h1 class="intro-title">동물 친구로 알아보는<br><span>나의 성격 탐험대!</span></h1>
+        <div class="intro-badge">✨ 나와 닮은 여자 연예인 찾기</div>
+        <h1 class="intro-title">나와 성격이 꼭 닮은<br><span>여자 연예인 MBTI!</span></h1>
         <p class="intro-subtitle">
-          쉬는 시간, 친구와의 놀이, 재밌는 상상으로<br>
-          나와 쏙 빼닮은 동물 수호신을 찾아보아요! 🐾
+          학교생활과 놀이로 쉽게 알아보는 20가지 질문!<br>
+          나는 어떤 반짝이는 스타와 성격이 꼭 닮았을까요? 💖
         </p>
 
         <div class="intro-animals">
-          <span>🐿️</span>
-          <span>🦁</span>
-          <span>🐬</span>
-          <span>🐼</span>
+          <span>🎀</span>
+          <span>👑</span>
+          <span>🎤</span>
+          <span>🧚‍♀️</span>
         </div>
 
         <div class="intro-feature-box">
@@ -52,16 +52,16 @@
             <span>⏱️</span> <strong>딱 3분!</strong> 지루할 틈 없는 20개 맞춤 질문
           </div>
           <div class="feature-item">
-            <span>🐾</span> <strong>16가지</strong> 개성 만점 동물 캐릭터와 성격 분석
+            <span>🌟</span> <strong>장원영, 아이유, 윈터 등</strong> 16명의 대표 여성 스타 매칭
           </div>
           <div class="feature-item">
-            <span>🤝</span> 나와 가장 잘 맞는 <strong>환상의 단짝 친구</strong> 찾기
+            <span>🤝</span> 나와 가장 잘 맞는 <strong>환상의 스타 단짝</strong> 찾기
           </div>
         </div>
       </div>
 
       <button id="btn-start" class="btn-start">
-        탐험 시작하기! 🚀
+        나의 스타 찾기 시작! 🚀
       </button>
 
       <!-- 시작 화면 하단 쿠팡 파트너스 공식 광고 배너 -->
@@ -114,19 +114,19 @@
 
     <!-- 3. 결과 계산 로딩 화면 -->
     <div id="screen-loading" class="screen">
-      <div class="loading-spinner">🧭</div>
-      <h2 class="loading-text">나의 동물 친구를 찾는 중...</h2>
-      <p class="loading-subtext">신비한 숲속에서 나와 가장 잘 맞는 수호신 동물이 걸어오고 있어요! 🐾</p>
+      <div class="loading-spinner">✨</div>
+      <h2 class="loading-text">나와 닮은 스타를 찾는 중...</h2>
+      <p class="loading-subtext">반짝이는 무대 위에서 나와 꼭 닮은 멋진 스타가 걸어오고 있어요! 💖</p>
     </div>
 
     <!-- 4. 결과 화면 -->
     <div id="screen-result" class="screen">
       <div class="result-card">
-        <div class="result-header-badge">나의 성격 탐험대 결과</div>
-        <div id="result-emoji" class="result-animal-emoji">🐿️</div>
-        <h2 id="result-name" class="result-animal-name">호기심 대장 날다람쥐</h2>
-        <div id="result-mbti" class="result-mbti-tag">ENFP</div>
-        <div id="result-tagline" class="result-tagline">"온 세상이 놀이터! 새로운 놀이는 내가 다 만들 거야!"</div>
+        <div class="result-header-badge">나와 성격이 닮은 스타</div>
+        <div id="result-emoji" class="result-animal-emoji">🎀</div>
+        <h2 id="result-name" class="result-animal-name">장원영 (IVE)</h2>
+        <div id="result-mbti" class="result-mbti-tag">ESFP</div>
+        <div id="result-tagline" class="result-tagline">"완전 럭키비키잖아! 난 언제 어디서나 반짝반짝 빛나!"</div>
         
         <div id="result-tags" class="result-tags">
           <!-- 해시태그 뱃지 -->

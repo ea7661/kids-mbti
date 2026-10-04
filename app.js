@@ -252,12 +252,12 @@ function copyCurrentUrl() {
     ? window.location.href
     : "https://eunae7661.github.io/kids-mbti/";
 
-  copyTextToClipboard(shareUrl, "🔗 성격 탐험대 링크가 복사되었어요! 친구에게 공유해 보세요! 🎉");
+  copyTextToClipboard(shareUrl, "🔗 스타 MBTI 테스트 링크가 복사되었어요! 친구에게 공유해 보세요! 🎉");
 }
 
 // 공유하기 기능 (Web Share API 또는 리치 텍스트 클립보드 복사)
 function handleShare() {
-  const name = resultName.textContent || "동물 친구";
+  const name = resultName.textContent || "인기 스타";
   const mbti = resultMbti.textContent || "";
   const tagline = resultTagline.textContent || "";
 
@@ -265,14 +265,14 @@ function handleShare() {
     ? window.location.href
     : "https://eunae7661.github.io/kids-mbti/";
 
-  const fullShareText = `[🐾 초등 성격 탐험대 나의 MBTI 결과]\n` +
-                        `나의 수호신 동물은? 👉 ${name} (${mbti})!\n` +
+  const fullShareText = `[💖 나와 성격이 꼭 닮은 여자 연예인 MBTI 결과]\n` +
+                        `나와 닮은 스타는? 👉 ${name} (${mbti})!\n` +
                         `${tagline}\n\n` +
-                        `너는 어떤 동물 친구야? 지금 찾아봐! 👇\n${shareUrl}`;
+                        `너는 장원영, 아이유, 윈터 중 누구랑 닮았어? 지금 찾아봐! 👇\n${shareUrl}`;
 
   if (navigator.share && window.location.protocol.startsWith("http")) {
     navigator.share({
-      title: "동물 친구로 알아보는 나의 성격 탐험대! 🦁🐿️",
+      title: "나와 성격이 꼭 닮은 여자 연예인은 누구? 🎀✨",
       text: fullShareText,
       url: shareUrl
     }).catch(() => {
